@@ -3,5 +3,7 @@ int main()
 {
     int n;
     scanf("%d",&n);
-    printf("%d:3312",n);
+    double k=2.5;
+    k%=1;
+    printf("%d",k);
 }
