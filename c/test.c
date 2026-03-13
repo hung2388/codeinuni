@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    if(3%-1==0) printf("1");
+    printf("%f\n",sqrt(3));
+    if(sqrt(9)==(int)sqrt(9)) printf("true");
     else printf("0");
 }
