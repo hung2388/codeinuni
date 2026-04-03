@@ -39,7 +39,7 @@ int main()
                 else
                 {
                     res=0;
-                }
+                }  
                 if(res==0) break;
             }
             if (res==0) break;
