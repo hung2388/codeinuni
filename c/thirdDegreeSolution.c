@@ -67,7 +67,7 @@ int main()
         int delta=b1*b1-4*c1;
         if(delta<0)
         {
-            printf("%d %d",solution[0].a,solution[0].b);
+            printf("NO SOLUTION");
             return 0;
         }
         else if(delta==0)
