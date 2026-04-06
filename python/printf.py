@@ -7,4 +7,4 @@ print(f"{number:010}") #in trong khung rộng 10 kí tự, và thêm số 0 vào
 print(f"{number:,}")#grand format
 print(f"{number:+,.2f}")
 for i in range(11):
-    print(f"{i}",end="") #end="" là ko xuống dòng
+    print(i,end="") #end="" là ko xuống dòng
