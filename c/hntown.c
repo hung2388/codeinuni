@@ -16,5 +16,5 @@ int main()
     int n,a,b,c;
     scanf("%d %d %d %d",&n,&a,&b,&c);
     printf("%d\n",(int)pow(2,n)-1);
-    Try(n,a,b,c);
+    Try(n,a,c,b);
 }
