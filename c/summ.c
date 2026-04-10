@@ -1,20 +1,29 @@
 #include<stdio.h>
+int n,q;
+int cnt=0;
+int A[2000];
+void try(int str,int sum)
+{
+    if(sum==q)
+    {
+        cnt++;
+        return;
+    }
+    for(int i=str;i<n;i++)
+    {
+            if(sum+A[i]<=q)
+            {
+                try(i+1,sum+A[i]);
+            }
+    }
+}
 int main()
 {
-    int n,q;
-    int cnt=0;
     scanf("%d %d",&n,&q);
-    int need[n+1];
-    for(int i=0;i<=n;i++)
-    {
-        need[i]=0;
-    }
     for(int i=0;i<n;i++)
     {
-        int c;
-        scanf("%d",&c);
-        need[c]=1;
-        if(need[q-c]==1) cnt++;
+        scanf("%d",&A[i]);
     }
+    try(0,0);
     printf("%d",cnt);
 }
