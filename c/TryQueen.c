@@ -18,15 +18,18 @@ int check(int i,int j)
 }
 void Try(int r)
 {
-    if(r==n&&cnt==n)
+    if(r==n)
     {
         sol++;
         return;
     }
-    for(int c=0;c<=n;c++)
+    if(R[r]==1)
     {
-        if(c==n)
         Try(r+1);
+        return;
+    }
+    for(int c=0;c<n;c++)
+    {
         if(check(r,c))
         {
             R[r]=1;
@@ -34,9 +37,7 @@ void Try(int r)
             Dm[n+r-c]=1;
             Dp[r+c]=1;
             A[r][c]=1;
-            cnt++;
             Try(r+1);
-            cnt--;
             R[r]=0;
             C[c]=0;
             Dm[n+r-c]=0;
@@ -72,7 +73,6 @@ int main()
             }
         }
     }
-    printf("%d",A[0][1]);
     Try(0);
     printf("%d",sol);
 }
