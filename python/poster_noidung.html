@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nội dung Poster – Vai trò Việt Nam</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 18px;
+    font-size: 10px;
+  }
+
+  /* ── TIÊU ĐỀ ── */
+  .title-block {
+    text-align: center;
+    border-bottom: 2.5px solid #c0392b;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+
+  .main-title {
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.45;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 7px;
+  }
+
+  .main-title .red { color: #c0392b; }
+
+  .authors {
+    font-size: 10px;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+
+  .contact {
+    font-size: 9px;
+    color: #888;
+  }
+
+  /* ── GRID 2 HÀNG × 3 CỘT ── */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* ── BLOCK CARD ── */
+  .block {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .block-header {
+    background: #c0392b;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .block-header.gold { background: #b8730a; }
+
+  .block-num {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.6);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px;
+    color: #fff;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .block-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+
+  .block-body {
+    padding: 9px 11px;
+    font-size: 9.2px;
+    color: #222;
+    line-height: 1.6;
+    background: #fff;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .block-body p { margin-bottom: 6px; }
+  .block-body p:last-child { margin-bottom: 0; }
+
+  .hl   { color: #c0392b; font-weight: 700; }
+  .hl2  { color: #b8730a; font-weight: 600; }
+
+  .section-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #c0392b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 7px 0 4px;
+    border-left: 2.5px solid #c0392b;
+    padding-left: 5px;
+  }
+
+  .section-label.gold {
+    color: #b8730a;
+    border-left-color: #b8730a;
+  }
+
+  .divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 6px 0;
+  }
+
+  /* ── BULLET ROWS ── */
+  .bullet-item {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 5px;
+    align-items: flex-start;
+  }
+
+  .dot   { color: #c0392b; font-size: 12px; line-height: 1.3; flex-shrink: 0; }
+  .check { color: #27ae60; font-size: 11px; line-height: 1.4; flex-shrink: 0; }
+  .cross { color: #c0392b; font-size: 11px; line-height: 1.4; flex-shrink: 0; }
+  .arr   { color: #b8730a; font-size: 11px; line-height: 1.4; flex-shrink: 0; }
+
+  .bt { flex: 1; }
+
+  /* ── TIMELINE ── */
+  .timeline-item {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 4px;
+    align-items: flex-start;
+    font-size: 9px;
+  }
+
+  .yr {
+    background: #c0392b;
+    color: #fff;
+    font-weight: 700;
+    font-size: 8px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── STAT BOX ── */
+  .stat-box {
+    background: #fff5f5;
+    border: 1px solid #f5c6c6;
+    border-left: 3px solid #c0392b;
+    border-radius: 4px;
+    padding: 7px 10px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: #c0392b;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 8.5px;
+    color: #555;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  /* ── KEYWORD BOX ── */
+  .keyword-box {
+    margin-top: 7px;
+    background: #fff8f0;
+    border: 1px solid #f0c080;
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 8.5px;
+    color: #7a4f00;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  /* ── SOLUTION NUM ── */
+  .sol-num {
+    width: 17px; height: 17px;
+    border-radius: 50%;
+    background: #c0392b;
+    color: #fff;
+    font-weight: 700;
+    font-size: 8.5px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── REF ── */
+  .ref-item {
+    font-size: 8px;
+    color: #666;
+    margin-bottom: 2.5px;
+    line-height: 1.4;
+  }
+
+  /* ── CONCLUSION BOX ── */
+  .concl-box {
+    background: #fdf5f5;
+    border-left: 3px solid #c0392b;
+    padding: 7px 10px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 7px;
+    font-size: 9.2px;
+    color: #222;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+  <!-- TIÊU ĐỀ -->
+  <div class="title-block">
+    <div class="main-title">
+      Vai trò của <span class="red">Việt Nam</span> trong việc duy trì Hòa bình<br>
+      và Ổn định khu vực <span class="red">Đông Nam Á</span> và trên thế giới hiện nay
+    </div>
+    <div class="authors">
+      Vũ Sinh Hùng &nbsp;·&nbsp; Trần Thị Hương Mơ &nbsp;·&nbsp; Phạm Quỳnh Anh &nbsp;·&nbsp; Cao Anh Minh Huy &nbsp;·&nbsp; Phạm Thị Duyên
+    </div>
+    <div class="contact">✉ hung.vs2417128@sis.hust.edu.vn &nbsp;·&nbsp; Đại học Bách Khoa Hà Nội</div>
+  </div>
+
+  <!-- HÀNG 1 -->
+  <div class="grid">
+
+    <!-- BLOCK 1: TÓM TẮT -->
+    <div class="block">
+      <div class="block-header">
+        <div class="block-num">1</div>
+        <div class="block-title">Tóm tắt</div>
+      </div>
+      <div class="block-body">
+        <p>Nghiên cứu phân tích vai trò của <span class="hl">Việt Nam</span> trong việc duy trì hòa bình và ổn định ở khu vực Đông Nam Á và trên thế giới trong bối cảnh toàn cầu hóa và cạnh tranh chiến lược gia tăng.</p>
+        <p>Trên cơ sở tiếp cận hòa bình như một <span class="hl2">quá trình động</span>, nghiên cứu làm rõ mối liên hệ giữa hòa bình với các yếu tố chính trị, kinh tế, xã hội và an ninh.</p>
+        <p>Kết quả cho thấy Việt Nam đã chuyển từ tập trung ổn định nội bộ sang <span class="hl">chủ thể tích cực</span> trong hợp tác và duy trì hòa bình quốc tế qua chính sách đối ngoại linh hoạt và tham gia gìn giữ hòa bình LHQ.</p>
+        <div class="keyword-box">Từ khóa: Hòa bình &nbsp;·&nbsp; Ổn định khu vực &nbsp;·&nbsp; Việt Nam</div>
+      </div>
+    </div>
+
+    <!-- BLOCK 2: CƠ SỞ LÝ LUẬN -->
+    <div class="block">
+      <div class="block-header">
+        <div class="block-num">2</div>
+        <div class="block-title">Cơ sở lý luận</div>
+      </div>
+      <div class="block-body">
+        <div class="section-label">Khái niệm cốt lõi</div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt"><span class="hl">Hòa bình:</span> Không chỉ vắng mặt xung đột (tiêu cực) mà bao hàm xây dựng công bằng và phát triển bền vững (tích cực).</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt"><span class="hl">Ổn định khu vực:</span> Môi trường an ninh, chính trị, kinh tế ổn định; giải quyết mâu thuẫn qua đối thoại và luật pháp quốc tế.</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt"><span class="hl">Hợp tác quốc tế:</span> Tất yếu trong toàn cầu hóa — không quốc gia nào tự giải quyết vấn đề an ninh một mình.</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt"><span class="hl">Ngoại giao đa phương:</span> Xây dựng lòng tin và giải quyết vấn đề chung trong các tổ chức, diễn đàn quốc tế.</div></div>
+
+        <div class="divider"></div>
+        <div class="section-label">Văn bản pháp lý & chính sách</div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Văn kiện Đại hội XIII: đa phương hóa, đa dạng hóa quan hệ quốc tế</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">NQ 22-NQ/TW & CT 25-CT/TW: ngoại giao đa phương là trụ cột chiến lược</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Sách trắng Quốc phòng 2019: chính sách <span class="hl">"Bốn Không"</span></div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Hiến chương ASEAN · DOC · COC · UNCLOS 1982</div></div>
+      </div>
+    </div>
+
+    <!-- BLOCK 3: GIỚI THIỆU -->
+    <div class="block">
+      <div class="block-header">
+        <div class="block-num">3</div>
+        <div class="block-title">Giới thiệu</div>
+      </div>
+      <div class="block-body">
+        <div class="section-label">Bối cảnh thế giới</div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Cạnh tranh chiến lược giữa các cường quốc ngày càng gay gắt về kinh tế, quân sự và công nghệ.</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Thách thức phi truyền thống: biến đổi khí hậu, dịch bệnh, an ninh mạng, chiến tranh thông tin.</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt"><span class="hl">Đông Nam Á</span> — khu vực địa chính trị quan trọng, nhiều lợi ích đan xen, tiềm ẩn nguy cơ bất ổn.</div></div>
+
+        <div class="divider"></div>
+        <div class="section-label">Vị trí địa chính trị Việt Nam</div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Rìa Đông bán đảo Đông Dương — cầu nối Ấn Độ Dương và Thái Bình Dương.</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Ba mặt giáp Biển Đông — tuyến hàng hải thương mại toàn cầu huyết mạch.</div></div>
+        <div class="bullet-item"><div class="dot">▸</div><div class="bt">Vai trò quản lý tài nguyên nước lưu vực sông Mekong.</div></div>
+
+        <div class="divider"></div>
+        <div class="section-label">Đường lối Việt Nam</div>
+        <p>Đối ngoại <span class="hl">độc lập, tự chủ, hòa bình, hợp tác và phát triển</span> — thành viên tích cực, có trách nhiệm trong cộng đồng quốc tế.</p>
+      </div>
+    </div>
+
+  </div><!-- end hàng 1 -->
+
+  <!-- HÀNG 2 -->
+  <div class="grid">
+
+    <!-- BLOCK 4: THỰC TRẠNG -->
+    <div class="block">
+      <div class="block-header gold">
+        <div class="block-num">4</div>
+        <div class="block-title">Thực trạng</div>
+      </div>
+      <div class="block-body">
+        <div class="stat-box">
+          <div class="stat-num">273</div>
+          <div class="stat-label">quân nhân &amp; cảnh sát đang thực hiện<br>nhiệm vụ gìn giữ hòa bình LHQ (01/2026)</div>
+        </div>
+
+        <div class="section-label gold">Quá trình hội nhập</div>
+        <div class="timeline-item"><div class="yr">1986</div><div>Đổi mới, phá thế cô lập</div></div>
+        <div class="timeline-item"><div class="yr">1995</div><div>Gia nhập ASEAN, bình thường hóa với Hoa Kỳ</div></div>
+        <div class="timeline-item"><div class="yr">1998</div><div>Gia nhập APEC</div></div>
+        <div class="timeline-item"><div class="yr">2007</div><div>Gia nhập WTO, tham gia gìn giữ hòa bình LHQ</div></div>
+        <div class="timeline-item"><div class="yr">2021+</div><div>Vai trò kiến tạo, chủ động định hình quy tắc quốc tế</div></div>
+
+        <div class="divider"></div>
+        <div class="section-label">Thành tựu</div>
+        <div class="bullet-item"><div class="check">✓</div><div class="bt">Kiên định đường lối hòa bình, giải quyết tranh chấp theo luật quốc tế</div></div>
+        <div class="bullet-item"><div class="check">✓</div><div class="bt">Dẫn dắt Diễn đàn Tương lai ASEAN, tái đắc cử HĐ Nhân quyền LHQ</div></div>
+        <div class="bullet-item"><div class="check">✓</div><div class="bt">Tham gia tích cực: APEC · ASEM · WTO · ADMM+</div></div>
+
+        <div class="divider"></div>
+        <div class="section-label">Hạn chế</div>
+        <div class="bullet-item"><div class="cross">✗</div><div class="bt">Nội lực kinh tế, KH-CN chưa đủ mạnh so với yêu cầu hội nhập sâu</div></div>
+        <div class="bullet-item"><div class="cross">✗</div><div class="bt">Ảnh hưởng tại một số cơ chế quốc tế chưa tương xứng tiềm năng</div></div>
+        <div class="bullet-item"><div class="cross">✗</div><div class="bt">Ứng phó thách thức an ninh phi truyền thống còn gặp khó khăn</div></div>
+      </div>
+    </div>
+
+    <!-- BLOCK 5: GIẢI PHÁP -->
+    <div class="block">
+      <div class="block-header gold">
+        <div class="block-num">5</div>
+        <div class="block-title">Giải pháp đến năm 2045</div>
+      </div>
+      <div class="block-body">
+        <div class="section-label gold">Định hướng chiến lược</div>
+        <div class="bullet-item"><div class="arr">→</div><div class="bt">Tiếp tục đường lối đối ngoại hòa bình, hợp tác, phát triển</div></div>
+        <div class="bullet-item"><div class="arr">→</div><div class="bt">Chủ động hội nhập toàn diện: kinh tế, chính trị, quốc phòng, văn hóa</div></div>
+        <div class="bullet-item"><div class="arr">→</div><div class="bt">Nâng cao vị thế, uy tín; thúc đẩy hợp tác vấn đề toàn cầu</div></div>
+
+        <div class="divider"></div>
+        <div class="section-label gold">Giải pháp cụ thể</div>
+        <div class="bullet-item"><div class="sol-num">1</div><div class="bt"><span class="hl2">Đẩy mạnh ngoại giao đa phương</span> — Chủ động đề xuất sáng kiến, xây dựng quy tắc chung tại các tổ chức, diễn đàn quốc tế.</div></div>
+        <div class="bullet-item"><div class="sol-num">2</div><div class="bt"><span class="hl2">Tăng cường QP-AN</span> — Kết hợp phát triển kinh tế với quốc phòng; nâng cao ứng phó an ninh phi truyền thống.</div></div>
+        <div class="bullet-item"><div class="sol-num">3</div><div class="bt"><span class="hl2">Mở rộng lực lượng gìn giữ hòa bình LHQ</span> — Nâng chất lượng, đầu tư đào tạo ngoại ngữ và phối hợp quốc tế.</div></div>
+        <div class="bullet-item"><div class="sol-num">4</div><div class="bt"><span class="hl2">Phát triển kinh tế &amp; nội lực</span> — Công nghiệp hóa, hiện đại hóa; nâng cao năng lực cạnh tranh và nhân lực chất lượng cao.</div></div>
+        <div class="bullet-item"><div class="sol-num">5</div><div class="bt"><span class="hl2">Hợp tác vấn đề toàn cầu</span> — Tích cực tham gia giải quyết biến đổi khí hậu, dịch bệnh, an ninh mạng.</div></div>
+        <div class="bullet-item"><div class="sol-num">6</div><div class="bt"><span class="hl2">Nâng cao nhân lực ngoại giao</span> — Đào tạo chuyên sâu về ngoại giao, luật quốc tế và quan hệ quốc tế.</div></div>
+      </div>
+    </div>
+
+    <!-- BLOCK 6: KẾT LUẬN + TÀI LIỆU -->
+    <div class="block">
+      <div class="block-header gold">
+        <div class="block-num">6</div>
+        <div class="block-title">Kết luận &amp; Tài liệu</div>
+      </div>
+      <div class="block-body">
+        <div class="concl-box">
+          Việt Nam đã đóng vai trò <span class="hl">tích cực</span> trong giữ vững môi trường hòa bình, ổn định qua đường lối đối ngoại độc lập, tự chủ, hòa bình, hợp tác và phát triển.
+        </div>
+        <div class="concl-box">
+          Triển khai đồng bộ các giải pháp về <span class="hl">đối ngoại · kinh tế · quốc phòng · nhân lực</span> là cơ sở để Việt Nam bảo vệ lợi ích quốc gia và thể hiện trách nhiệm với cộng đồng quốc tế.
+        </div>
+
+        <div class="divider"></div>
+        <div class="section-label gold">Tài liệu tham khảo</div>
+        <div class="ref-item">[1] UN, "A New Approach to Peace," 2018.</div>
+        <div class="ref-item">[2] J. Galtung, <em>Peace by Peaceful Means.</em> Sage, 1996.</div>
+        <div class="ref-item">[3] ASEAN Charter. Singapore, 2007.</div>
+        <div class="ref-item">[4] DOC — Declaration on Conduct, Phnom Penh, 2002.</div>
+        <div class="ref-item">[5] UNCLOS, Montego Bay, 1982.</div>
+        <div class="ref-item">[6] UN Peacekeeping, Troop Contributors, 2026.</div>
+        <div class="ref-item">[7] Sách trắng Quốc phòng Việt Nam, BQP, 2019.</div>
+        <div class="ref-item">[8] Văn kiện Đại hội XIII, Đảng CSVN, 2021.</div>
+        <div class="ref-item">[9] Nghị quyết 22-NQ/TW, Bộ Chính trị.</div>
+        <div class="ref-item">[10] World Bank, Vietnam Overview, 2024.</div>
+      </div>
+    </div>
+
+  </div><!-- end hàng 2 -->
+
+</body>
+</html>

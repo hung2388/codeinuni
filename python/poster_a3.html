@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Poster – Vai trò của Việt Nam trong việc duy trì Hòa bình</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: #1a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  /* A3 portrait: 297 x 420mm → at 96dpi scale: 842 x 1190px */
+  .poster {
+    width: 842px;
+    height: 1190px; 
+    position: relative;
+    overflow: hidden;
+    background: #fff; /* Nền trắng dự phòng */
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+  }
+
+  /* ── Background Layer ── */
+  .background-layer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Sử dụng URL ảnh bạn đã cung cấp */
+    background-image: url("bg.jpg"); 
+    background-size: 100% 100%; /* Ép ảnh vừa khít kích thước poster */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  /* Đảm bảo nội dung nằm trên background */
+  .header, .conf-line, .title-block, .content, .footer {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Header adjustments */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 45px 0;
+  }
+
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .logo-circle {
+    width: 55px; height: 55px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 2px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  /* Logo thực tế từ ảnh của bạn */
+  .logo-circle img { width: 100%; height: auto; }
+
+  .hust-badge { display: flex; align-items: center; gap: 8px; color: #fff; }
+  .hust-70 { font-size: 32px; font-weight: 800; border-right: 2px solid #fff; padding-right: 8px; line-height: 1; }
+
+  .header-right .conf-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-align: right;
+    backdrop-filter: blur(5px);
+  }
+
+  .conf-line {
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 10px;
+    margin-top: 15px;
+    letter-spacing: 1px;
+  }
+
+  /* ── TITLE BLOCK ── */
+  .title-block {
+    text-align: center;
+    padding: 100px 95px 15px; /* Căn chỉnh để rơi đúng vào khoảng trắng của bg.jpg */
+  }
+
+  .main-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #8b1a1a; /* Màu đỏ thẫm theo tone HUST */
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .main-title span { color: #c8860a; }
+
+  .authors { font-size: 10px; color: #444; font-weight: 600; margin-bottom: 5px; }
+  .contact { font-size: 9px; color: #666; }
+
+  /* ── CONTENT AREA ── */
+  .content {
+    padding: 10px 95px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .block {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .block-header {
+    background: #8b1a1a;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .block-icon {
+    width: 18px; height: 18px;
+    background: #e8c87a;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 800; color: #8b1a1a;
+  }
+
+  .block-title { font-size: 10px; font-weight: 700; color: #fff; text-transform: uppercase; }
+
+  .block-body { padding: 10px; font-size: 8.5px; line-height: 1.4; color: #222; }
+  
+  .hl { color: #8b1a1a; font-weight: 700; }
+  
+  /* Timeline & Stats */
+  .stat-box {
+    background: #fdf2f2;
+    border: 1px solid #8b1a1a;
+    padding: 8px;
+    text-align: center;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+  .stat-num { font-size: 22px; font-weight: 800; color: #8b1a1a; }
+  .stat-label { font-size: 7px; text-transform: uppercase; color: #555; }
+
+  .footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <div class="background-layer"></div>
+
+  <div class="header">
+    <div class="header-left">
+      <div class="logo-circle">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Logo_Hust.png" alt="HUST">
+      </div>
+      <div class="hust-badge">
+        <div class="hust-70">70</div>
+        <div style="font-size:10px; line-height:1.2;">NĂM THÀNH LẬP<br>1956 - 2026</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="conf-badge">SVNCKH 2025–2026<br>CÔNG NGHỆ & SÁNG TẠO</div>
+    </div>
+  </div>
+
+  <div class="conf-line">ĐẠI HỌC BÁCH KHOA HÀ NỘI — TRƯỜNG CÔNG NGHỆ THÔNG TIN & TRUYỀN THÔNG</div>
+
+  <div class="title-block">
+    <div class="main-title">
+      Vai trò của <span>Việt Nam</span> trong việc duy trì<br>
+      Hòa bình và Ổn định khu vực <span>Đông Nam Á</span><br>
+      và trên thế giới hiện nay
+    </div>
+    <div class="authors">Nhóm sinh viên: Vũ Sinh Hùng · Trần Thị Hương Mơ · Phạm Quỳnh Anh · Cao Anh Minh Huy · Phạm Thị Duyên</div>
+    <div class="contact">hung.vs2417128@sis.hust.edu.vn · Giảng viên hướng dẫn: TS. Nguyễn Văn A</div>
+  </div>
+
+  <div class="content">
+    <div class="block">
+      <div class="block-header"><div class="block-icon">1</div><div class="block-title">Tóm tắt</div></div>
+      <div class="block-body">
+        <p>Nghiên cứu phân tích vai trò của <span class="hl">Việt Nam</span> là chủ thể tích cực trong hợp tác quốc tế. Chuyển mình từ ổn định nội bộ sang đóng góp gìn giữ hòa bình LHQ.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-header"><div class="block-icon">2</div><div class="block-title">Cơ sở lý luận</div></div>
+      <div class="block-body">
+        <p>• <b>Hòa bình:</b> Quá trình động, bao hàm công bằng và phát triển.<br>• <b>Đối ngoại:</b> Đa phương hóa, đa dạng hóa.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-header"><div class="block-icon">3</div><div class="block-title">Bối cảnh</div></div>
+      <div class="block-body">
+        <p>Cạnh tranh chiến lược gay gắt. Đông Nam Á là tâm điểm địa chính trị với nhiều thách thức an ninh phi truyền thống.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" style="margin-top:0;">
+    <div class="block">
+      <div class="block-header"><div class="block-icon">4</div><div class="block-title">Thực trạng</div></div>
+      <div class="block-body">
+        <div class="stat-box">
+          <div class="stat-num">273</div>
+          <div class="stat-label">Cán bộ, chiến sĩ tham gia GGHB LHQ</div>
+        </div>
+        <p>Gia nhập ASEAN (1995), WTO (2007), Ủy viên không thường trực HĐBA LHQ.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-header"><div class="block-icon">5</div><div class="block-title">Giải pháp 2045</div></div>
+      <div class="block-body">
+        <p>1. Ngoại giao đa phương tích cực.<br>2. Hiện đại hóa quốc phòng.<br>3. Nâng cao nội lực kinh tế số.</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-header"><div class="block-icon">6</div><div class="block-title">Kết luận</div></div>
+      <div class="block-body">
+        <p>Việt Nam khẳng định vị thế quốc gia yêu chuộng hòa bình, có trách nhiệm cao với cộng đồng quốc tế.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    HỘI NGHỊ SINH VIÊN NGHIÊN CỨU KHOA HỌC — HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY
+  </div>
+
+</div>
+
+</body>
+</html>
